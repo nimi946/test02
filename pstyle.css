@@ -1,0 +1,405 @@
+/* 🌼 Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #fffdf5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* 🌺 Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 50px;
+  background-color: #fff0f5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 2em;
+  font-weight: bold;
+  color: #c71585;
+  text-decoration: none;
+}
+
+.logo span {
+  color: #ff69b4;
+}
+
+/* 🌸 Navigation */
+.navbar {
+  display: flex;
+  gap: 24px;           /* Equal spacing between all links */
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.navbar a {
+  color: #4b0082;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 0;      /* Only vertical padding */
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  /* No horizontal margin or padding */
+}
+
+.navbar a:hover {
+  background-color: #ffe4e1;
+  color: #c71585;
+  transform: scale(1.1);
+}
+
+/* 🌼 Icons */
+.icons a {
+  margin-left: 15px;
+  color: #c71585;
+  font-size: 1.2em;
+  transition: transform 0.2s ease;
+}
+
+.icons a:hover {
+  transform: scale(1.2);
+}
+
+/* 📱 Toggle (Mobile) */
+#toggler {
+  display: none;
+}
+
+label[for="toggler"] {
+  display: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+/* 📱 Mobile Nav */
+@media (max-width: 768px) {
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff0f5;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+  }
+
+  #toggler:checked ~ .navbar {
+    display: flex;
+  }
+
+  label[for="toggler"] {
+    display: block;
+    color: #c71585;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .icons {
+    margin-top: 10px;
+  }
+}
+
+/* 🏠 Home Page Content */
+.hero-content {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #ff69b4;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #c71585;
+}
+
+/* 📸 Gallery Cards */
+.gallery {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 40px 0;
+}
+
+.product {
+  background: #fff0f5;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  width: 300px;
+  padding: 24px 16px 16px 16px;
+  text-align: center;
+  transition: transform 0.2s;
+  border: 1px solid #f8c3df;
+}
+
+.product:hover {
+  transform: scale(1.05);
+}
+
+.product img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 18px;
+}
+
+.product h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.product p {
+  color: #4b0082;
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+/* 🌼 About Page */
+.about {
+  padding: 40px;
+  background-color: #fffafa;
+}
+
+.about-section {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.about-img {
+  flex: 1;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.about-text {
+  flex: 2;
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #4b0082;
+}
+
+.about-text h2 {
+  color: #c71585;
+  margin-bottom: 16px;
+}
+
+/* 📇 Contact Page */
+.contact {
+  padding: 40px;
+  background-color: #fffdf5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+.contact-card {
+  flex: 1;
+  max-width: 400px;
+  background-color: #fff0f5;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  color: #4b0082;
+}
+
+.contact-card ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 16px;
+}
+
+.contact-card li {
+  margin-bottom: 12px;
+}
+
+.contact-form {
+  flex: 1;
+  max-width: 400px;
+  padding: 30px;
+  background-color: #f0f8ff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+.contact-form button {
+  background-color: #c71585;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #ff69b4;
+}
+
+/* 💬 Review Page */
+.reviews {
+  text-align: center;
+  padding: 40px;
+  background-color: #fffdf5;
+}
+
+.reviews h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #c71585;
+}
+
+.review-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.review-card {
+  background-color: #fff0f5;
+  border: 1px solid #f8c3df;
+  border-radius: 12px;
+  width: 300px;
+  padding: 24px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+  transform: scale(1.05);
+}
+
+.review-card p {
+  font-style: italic;
+  font-size: 1.1em;
+  margin-bottom: 12px;
+}
+
+.review-card h3 {
+  color: #4b0082;
+  font-weight: bold;
+}
+
+/* 🔚 Footer */
+footer {
+  background-color: #ffe4e1;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9em;
+  color: #333;
+}
+/* 🌼 General Page Styling */
+.page {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.page p {
+  font-size: 1.1em;
+  max-width: 700px;
+  margin: 0 auto 20px;
+  color: #4b0082;
+}
+
+.page img {
+  display: block;
+  margin: 20px auto;
+  border-radius: 12px;
+  max-width: 100%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.welcome-section {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0; /* Remove top and bottom padding */
+}
+
+.welcome-img-container {
+  position: relative;
+  width: 100%;
+  max-width: none; /* Remove or set to none for full width */
+  margin: 0;
+}
+
+.welcome-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.welcome-overlay {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  left: auto;
+  transform: translateY(-50%);
+  color: #99177adf;
+  background: rgba(255,255,255,0.7); /* Add this line for background shade */
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  width: 40%;
+  min-width: 300px;
+}
+
+.welcome-overlay h1 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+.welcome-overlay p {
+  font-size: 1.2rem;
+}
